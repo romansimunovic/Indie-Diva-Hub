@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+/* --- GLOBALNI STIL --- */
+@layer base {
+  body {
+    @apply min-h-screen bg-[#fdfaf5] text-gray-800 font-sans antialiased;
+    font-family: "Poppins", "Inter", sans-serif;
+  }
+
+  h1, h2, h3 {
+    @apply tracking-tight;
+  }
+}
+
+/* --- KOMPONENTE --- */
+@layer components {
+  .btn-primary {
+    @apply bg-pink-500 text-white font-medium px-4 py-2 rounded-full shadow-sm hover:bg-pink-600 transition;
+  }
+
+  .input-field {
+    @apply border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-pink-300 focus:outline-none transition;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-md overflow-hidden transition hover:shadow-lg hover:-translate-y-1;
+  }
+}
+
+/* --- ANIMACIJE --- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-in-out;
+}
